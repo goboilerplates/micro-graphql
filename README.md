@@ -8,6 +8,7 @@
 
 ## Features
 - REST API and Swagger UI
+- Middlewares (cors, gzip and static)
 - CI with Travis
 - Docker Build
 
