@@ -6,7 +6,7 @@ import (
 	"github.com/goboilerplates/micro-rest/core"
 )
 
-// SetAPIPaths .
+// SetAPIPaths sets API paths.
 func SetAPIPaths(router *gin.Engine) {
 	var getSamplesAPI api.GetSamplesAPI
 

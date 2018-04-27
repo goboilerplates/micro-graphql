@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// GetSamplesInteractor .
+// GetSamplesInteractor is the interface of GetSamplesInteractor.
 type GetSamplesInteractor interface {
 	All() ([]*SampleEntity, error)
 	AllByName(keyword string) ([]*SampleEntity, error)
@@ -16,12 +16,12 @@ type GetSamplesInteractorImpl struct {
 	Samples []*SampleEntity
 }
 
-// All .
+// All gets all samples.
 func (interactor GetSamplesInteractorImpl) All() ([]*SampleEntity, error) {
 	return interactor.Samples, nil
 }
 
-// AllByName .
+// AllByName gets all samples that have name matched with keyword.
 func (interactor GetSamplesInteractorImpl) AllByName(keyword string) ([]*SampleEntity, error) {
 	keyword = strings.ToLower(keyword)
 	var list []*SampleEntity

@@ -5,18 +5,18 @@ import (
 	"github.com/goboilerplates/micro-rest/core"
 )
 
-// GetSamplesAPI .
+// GetSamplesAPI is the interface for GetSamplesAPI.
 type GetSamplesAPI interface {
 	All(context *gin.Context)
 	AllByName(context *gin.Context)
 }
 
-// GetSamplesAPIImpl .
+// GetSamplesAPIImpl is the implementation of GetSamplesAPI interface.
 type GetSamplesAPIImpl struct {
 	Interactor core.GetSamplesInteractor
 }
 
-// All .
+// All gets all samples.
 func (api GetSamplesAPIImpl) All(context *gin.Context) {
 	body, err := api.Interactor.All()
 	if err != nil {
@@ -27,7 +27,7 @@ func (api GetSamplesAPIImpl) All(context *gin.Context) {
 	context.JSON(200, body)
 }
 
-// AllByName .
+// AllByName gets all samples that have name matched with keyword.
 func (api GetSamplesAPIImpl) AllByName(context *gin.Context) {
 	keyword := context.Param("keyword")
 	body, err := api.Interactor.AllByName(keyword)

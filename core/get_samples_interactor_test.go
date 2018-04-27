@@ -7,6 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// SetupGetSamplesInteractor .
 func SetupGetSamplesInteractor() core.GetSamplesInteractor {
 	return core.CreateDefaultGetSamples("Kaka", "Ronaldo")
 }

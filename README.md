@@ -13,7 +13,7 @@
 
 ## Installation
 
-Get the gonitor repository
+Get the micro-rest repository
 
 ```
 go get github.com/goboilerplates/micro-rest
