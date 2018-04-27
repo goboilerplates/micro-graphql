@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/goboilerplates/micro-rest/core/interactor"
+	"github.com/goboilerplates/micro-rest/core"
 )
 
 // GetSamplesAPI .
@@ -13,7 +13,7 @@ type GetSamplesAPI interface {
 
 // GetSamplesAPIImpl .
 type GetSamplesAPIImpl struct {
-	Interactor interactor.GetSamplesInteractor
+	Interactor core.GetSamplesInteractor
 }
 
 // All .

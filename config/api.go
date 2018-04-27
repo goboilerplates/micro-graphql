@@ -3,7 +3,7 @@ package config
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/goboilerplates/micro-rest/api"
-	"github.com/goboilerplates/micro-rest/core/creator"
+	"github.com/goboilerplates/micro-rest/core"
 )
 
 // SetAPIPaths .
@@ -11,7 +11,9 @@ func SetAPIPaths(router *gin.Engine) {
 	var getSamplesAPI api.GetSamplesAPI
 
 	// inject GetSamplesAPIImpl .
-	getSamplesAPI = api.GetSamplesAPIImpl{Interactor: creator.DefaultGetSamples()}
+	getSamplesAPI = api.GetSamplesAPIImpl{
+		Interactor: core.CreateDefaultGetSamples("Kaka", "Ronaldo"),
+	}
 
 	apiV1 := router.Group("/api/v1")
 	{

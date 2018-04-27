@@ -1,34 +1,32 @@
-package interactor
+package core
 
 import (
 	"errors"
 	"strings"
-
-	"github.com/goboilerplates/micro-rest/core/entity"
 )
 
 // GetSamplesInteractor .
 type GetSamplesInteractor interface {
-	All() ([]*entity.SampleEntity, error)
-	AllByName(keyword string) ([]*entity.SampleEntity, error)
+	All() ([]*SampleEntity, error)
+	AllByName(keyword string) ([]*SampleEntity, error)
 }
 
 // GetSamplesInteractorImpl is the implementation of GetSamplesInteractor interface.
 type GetSamplesInteractorImpl struct {
-	Samples []*entity.SampleEntity
+	Samples []*SampleEntity
 }
 
 // All .
-func (interactor GetSamplesInteractorImpl) All() ([]*entity.SampleEntity, error) {
+func (interactor GetSamplesInteractorImpl) All() ([]*SampleEntity, error) {
 	return interactor.Samples, nil
 }
 
 // AllByName .
-func (interactor GetSamplesInteractorImpl) AllByName(keyword string) ([]*entity.SampleEntity, error) {
+func (interactor GetSamplesInteractorImpl) AllByName(keyword string) ([]*SampleEntity, error) {
 	keyword = strings.ToLower(keyword)
-	var list []*entity.SampleEntity
+	var list []*SampleEntity
 	for _, item := range interactor.Samples {
-		name := strings.ToLower(item.Name)
+		name := item.NameLower()
 		if strings.Contains(name, keyword) {
 			list = append(list, item)
 		}
