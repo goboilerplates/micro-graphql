@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/goboilerplates/micro-rest/core"
+	"github.com/goboilerplates/core"
 )
 
 // GetSamplesAPI is the interface for GetSamplesAPI.

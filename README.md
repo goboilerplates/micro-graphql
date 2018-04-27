@@ -68,7 +68,7 @@ bash script/BuildMulti.sh
 
 ```bash
     # enable production mode, default is false
-    env GONI_PRODMODE=true
+    env GBP_PROMODE=true
 ```
 ## Docker support 
 

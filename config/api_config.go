@@ -2,8 +2,8 @@ package config
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/goboilerplates/core"
 	"github.com/goboilerplates/micro-rest/api"
-	"github.com/goboilerplates/micro-rest/core"
 )
 
 // SetAPIPaths sets API paths.
