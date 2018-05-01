@@ -6,8 +6,9 @@ import (
 )
 
 // SetMiddleWares setups middlewares.
-func SetMiddleWares(router *gin.Engine) {
-	router.Use(middleware.Cors())
-	router.Use(middleware.Gzip())
-	router.Use(middleware.Static())
+func SetMiddleWares(router *gin.Engine) gin.IRoutes {
+	iroutes := router.Use(middleware.Cors())
+	iroutes = router.Use(middleware.Gzip())
+	iroutes = router.Use(middleware.Static())
+	return iroutes
 }
