@@ -9,7 +9,7 @@
   "tags": [{
     "name": "sample"
   }],
-  "schemes": ["http"],
+  "schemes": ["http","https"],
   "paths": {
     "/api/v1/samples": {
       "get": {

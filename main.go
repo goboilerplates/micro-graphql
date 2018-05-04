@@ -18,4 +18,11 @@ func main() {
 	config.SetAPIPaths(router)
 
 	router.Run(serverPort)
+
+	// Serve HTTPS
+	// const (
+	// 	pemFilePath = "./keys/server.pem"
+	// 	keyFilePath = "./keys/server.key"
+	// )
+	// router.RunTLS(":9002", pemFilePath, keyFilePath)
 }

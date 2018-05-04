@@ -27,6 +27,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/gin-contrib/secure"
+  packages = ["."]
+  revision = "624341e112805e689f488495c9880bb97026b47c"
+
+[[projects]]
+  branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
   revision = "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
@@ -46,6 +52,12 @@
   ]
   revision = "d459835d2b077e44f7c9b453505ee29881d5d12d"
   version = "v1.2"
+
+[[projects]]
+  name = "github.com/goboilerplates/core"
+  packages = ["."]
+  revision = "3fc72484567fc30f9f823bce5143aaccbaf6670e"
+  version = "0.0.0"
 
 [[projects]]
   name = "github.com/golang/protobuf"
@@ -77,11 +89,7 @@
 
 [[projects]]
   name = "github.com/stretchr/testify"
-  packages = [
-    "assert",
-    "require",
-    "suite"
-  ]
+  packages = ["assert"]
   revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
   version = "v1.2.1"
 
@@ -110,6 +118,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c108cbc5ef8159006203b64e69f3cbb604339a3c384b97a45d477ffb9969ea64"
+  inputs-digest = "22645829259933760e5af203190d897626a6686d42c6fb573620b4d918d35031"
   solver-name = "gps-cdcl"
   solver-version = 1
