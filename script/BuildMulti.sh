@@ -1,6 +1,6 @@
 
 package_name=build
-app_name=micro-rest
+app_name=micro-graphql
 
 platforms=("windows/amd64" "linux/amd64" "darwin/amd64")
 

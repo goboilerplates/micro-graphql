@@ -1,1 +1,1 @@
-go build -o micro-rest.out .
+go build -o micro-graphql.out .

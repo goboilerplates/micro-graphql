@@ -1,0 +1,1 @@
+env GBP_PROMODE=false go run main.go

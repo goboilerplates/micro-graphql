@@ -5,7 +5,7 @@ GOFILES := $(shell find . -name "*.go" -type f -not -path "./vendor/*")
 all: install
 
 install:
-	go get github.com/goboilerplates/micro-rest
+	go get github.com/goboilerplates/micro-graphql
 	go get -u github.com/golang/dep/cmd/dep
 	dep ensure
 
@@ -16,4 +16,4 @@ build:
 	bash script/BuildMulti.sh
 
 buildDocker:
-	docker build -t goboilerplates/micro-rest .
+	docker build -t goboilerplates/micro-graphql .

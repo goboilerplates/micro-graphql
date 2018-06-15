@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/goboilerplates/micro-rest/config"
-	"github.com/goboilerplates/micro-rest/env"
+	"github.com/goboilerplates/micro-graphql/config"
+	"github.com/goboilerplates/micro-graphql/env"
 )
 
 func main() {

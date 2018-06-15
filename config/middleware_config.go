@@ -2,7 +2,7 @@ package config
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/goboilerplates/micro-rest/middleware"
+	"github.com/goboilerplates/micro-graphql/middleware"
 )
 
 // SetMiddleWares setups middlewares.

@@ -1,14 +1,15 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
+	"log"
+
 	"github.com/goboilerplates/core"
+	"github.com/graphql-go/graphql"
 )
 
 // GetSamplesAPI is the interface for GetSamplesAPI.
 type GetSamplesAPI interface {
-	All(context *gin.Context)
-	AllByName(context *gin.Context)
+	All(params graphql.ResolveParams) (interface{}, error)
 }
 
 // GetSamplesAPIImpl is the implementation of GetSamplesAPI interface.
@@ -17,24 +18,13 @@ type GetSamplesAPIImpl struct {
 }
 
 // All gets all samples.
-func (api GetSamplesAPIImpl) All(context *gin.Context) {
-	body, err := api.Interactor.All()
-	if err != nil {
-		context.JSON(404, err)
-		return
+func (api GetSamplesAPIImpl) All(params graphql.ResolveParams) (interface{}, error) {
+	keyword := params.Args["keyword"]
+	log.Println("request to get samples with keyword: ", keyword)
+	if keyword != nil {
+		samples, err := api.Interactor.AllByName(keyword.(string))
+		return samples, err
 	}
-
-	context.JSON(200, body)
-}
-
-// AllByName gets all samples that have name matched with keyword.
-func (api GetSamplesAPIImpl) AllByName(context *gin.Context) {
-	keyword := context.Param("keyword")
-	body, err := api.Interactor.AllByName(keyword)
-	if err != nil {
-		context.JSON(404, err)
-		return
-	}
-
-	context.JSON(200, body)
+	samples, err := api.Interactor.All()
+	return samples, err
 }
